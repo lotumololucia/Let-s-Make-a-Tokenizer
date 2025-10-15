@@ -25,7 +25,12 @@ class Tokenizer:
                 rule = self.rule_list[rule_index]
                 match = re.match(self.rules[rule], token)
                 if match:
-                    for group in match.groups():
+                    for group in match.groups(): 
+                    '''
+                    accessing the captured sub-patterns within a successful match. 
+                    When a regex pattern contains parentheses (), these define "capturing groups." 
+                    These groups allow for the extraction of specific parts of the matched text.
+                    '''
                         if group:
                             self.__tokenize_pipeline(group)
                             continue_matching = False
@@ -39,8 +44,8 @@ class Tokenizer:
     def tokenize(self, string):
         """Return list of tokenized strings."""
         self.accepted_tokens = []
-        tokens = (token for token in string.split()) #separa por espacios
-        for token in tokens:
+        tokens = (token for token in string.split()) #separa por espacios: tokens = ["What's", "up,", "John?"]
+        for token in tokens:	#Token 1: "What's"
             self.__tokenize_pipeline(token)
 
         return self.accepted_tokens

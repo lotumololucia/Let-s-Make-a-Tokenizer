@@ -9,4 +9,7 @@ LEXICON = {
     "I'm" : ["I", "'m"],
 }
 
-
+'''
+Si encuentra una de estas palabras completas, no usar regex.
+En cambio, reemplazala por esta lista de tokens.
+'''
